@@ -52,7 +52,7 @@ void runController(){
 
 void runStreamer(){
     streamer = new RtmpStreamer(input,output);
-    streamer->Lounch();
+    streamer->Launch();
 }
 
 int main(int argc, const char * argv[]) {
