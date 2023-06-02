@@ -364,8 +364,10 @@ typedef struct _CustomData {
     
     // HANDLERS
     static void pts_analysis_cb(GstElement *identity, GstBuffer *buffer, _CustomData *data) {
-        gchar *text;
-        text = g_strdup_printf ("PTS: %" GST_TIME_FORMAT,
+        if (!data->text_overlay)
+            return;
+        
+        gchar *text = g_strdup_printf ("PTS: %" GST_TIME_FORMAT,
                                 GST_TIME_ARGS (GST_BUFFER_PTS (buffer)));
         g_object_set (G_OBJECT (data->text_overlay),
                       "text", text, NULL);
