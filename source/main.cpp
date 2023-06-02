@@ -2,7 +2,7 @@
 #include <thread>
 #include <gst/gst.h>
 
-#include "RtmpStreamer/RtmpStreamer.hpp"
+#include "rtmp/streamer.hpp"
 
 using namespace std;
 

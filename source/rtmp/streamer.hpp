@@ -388,9 +388,15 @@ typedef struct _CustomData {
 
         if (g_str_has_prefix (new_pad_type,"audio/mpeg")){
             ret = gst_pad_link (new_pad, sink_pad_audio);
+            if (GST_PAD_LINK_FAILED (ret)) {
+               g_print ("Type is '%s' but link failed.\n", new_pad_type);
+             }
         }
         else if (g_str_has_prefix (new_pad_type, "video/x-h264")){
             ret = gst_pad_link (new_pad, sink_pad_video);
+            if (GST_PAD_LINK_FAILED (ret)) {
+               g_print ("Type is '%s' but link failed.\n", new_pad_type);
+             }
         }
         else {
             // ignore
@@ -412,8 +418,8 @@ typedef struct _CustomData {
 
 class RtmpStreamer{
 private:
-    CustomData *data = nullptr;
-    GstBus *bus = nullptr;
+    CustomData *data;
+    GstBus *bus;
 public:
     RtmpStreamer(const gchar *file_path, const gchar *rtmp_address);
     ~RtmpStreamer();

@@ -1,4 +1,4 @@
-#include "RtmpStreamer.hpp"
+#include "streamer.hpp"
 
 RtmpStreamer::RtmpStreamer(const gchar *file_path, const gchar *rtmp_address){
     gst_init(NULL, NULL);

@@ -2,10 +2,12 @@
 GStreamer-based rtmp streamer 
 
 ## Usage examples: 
+
 For file streaming:
-	streamer 'path/to/file.mp4' 'rtmp://127.0.0.1/path/to/rtmp/endpoint'
+\tstreamer 'path/to/file.mp4' 'rtmp://127.0.0.1/path/to/rtmp/endpoint'
+
 For testsrc streaming:
-	streamer 'rtmp://127.0.0.1/path/to/rtmp/endpoint'
+\tstreamer 'rtmp://127.0.0.1/path/to/rtmp/endpoint'
 
 ## Commands:
 	'play' - run streamer
