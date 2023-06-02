@@ -71,7 +71,6 @@ int main(int argc, const char * argv[]) {
         default:
             break;
     }
-    
     // run streamer
     std::thread streamerThread(runStreamer);
     // run controller
